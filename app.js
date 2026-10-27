@@ -3,7 +3,7 @@
   var DATA = KANJI_DATA.map(function (r) {
     return {
       k: r[0], cat: r[2], ja: r[3], idn: r[4], read: r[1],
-      words: r[5].split(';').map(function (w) { var p = w.split('|'); return { w: p[0], r: p[1], idn: p[2] }; })
+      words: r[5] ? r[5].split(';').map(function (w) { var p = w.split('|'); return { w: p[0], r: p[1], idn: p[2] }; }) : []
     };
   });
 
@@ -70,16 +70,18 @@
       add('意味（日本語）', c.ja);
       add('Arti（インドネシア語）', c.idn, 'id');
       b.appendChild(dl);
-      b.appendChild(el('dt', null, '関連する言葉'));
-      var ul = el('ul');
-      c.words.forEach(function (w) {
-        var li = el('li');
-        li.appendChild(el('b', null, w.w));
-        li.appendChild(el('span', null, '（' + w.r + '）'));
-        li.appendChild(el('span', 'id', ' ' + w.idn));
-        ul.appendChild(li);
-      });
-      b.appendChild(ul);
+      if (c.words.length) {
+        b.appendChild(el('dt', null, '関連する言葉'));
+        var ul = el('ul');
+        c.words.forEach(function (w) {
+          var li = el('li');
+          li.appendChild(el('b', null, w.w));
+          li.appendChild(el('span', null, '（' + w.r + '）'));
+          li.appendChild(el('span', 'id', ' ' + w.idn));
+          ul.appendChild(li);
+        });
+        b.appendChild(ul);
+      }
       card.appendChild(b);
     }
     if (!st.flipped) card.onclick = flip;
