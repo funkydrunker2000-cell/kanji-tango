@@ -14,7 +14,7 @@ button{font:inherit;cursor:pointer}
 .sub{padding:4px 10px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:6px;font-size:.85rem}
 #progress{font-size:.85rem;color:var(--sub);margin:8px 0 0}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;min-height:300px;padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;user-select:none}
-.card .big{font-size:3.2rem;word-break:keep-all;line-height:1.1;font-family:"Yu Mincho","Hiragino Mincho ProN",serif}
+.card .big{font-size:2.4rem;overflow-wrap:anywhere;line-height:1.1;font-family:"Yu Mincho","Hiragino Mincho ProN",serif}
 .card .hint{color:var(--sub);font-size:.8rem;margin-top:12px}
 .card .tag{font-size:.75rem;color:var(--sub);border:1px solid var(--line);border-radius:10px;padding:0 8px;margin-bottom:6px}
 .back{width:100%;text-align:left;cursor:default}
@@ -32,7 +32,7 @@ button{font:inherit;cursor:pointer}
 .row .ok{background:var(--ok);color:#fff;border-color:var(--ok)}
 .row .ng{background:var(--ng);color:#fff;border-color:var(--ng)}
 .q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
-.q .big{font-size:2.8rem;line-height:1.1;font-family:"Yu Mincho",serif}
+.q .big{font-size:2.2rem;overflow-wrap:anywhere;line-height:1.1;font-family:"Yu Mincho",serif}
 .q p{margin:4px 0;color:var(--sub)}
 .opts{display:grid;gap:8px;margin-top:12px}
 .opt{padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font-size:1.1rem}
